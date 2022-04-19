@@ -22,7 +22,7 @@ function exerciseHeightSetter() {
 }
 
 /*=============================================
-=            Section comment block            =
+=             INPUT EVENT LISTENER            =
 =============================================*/
 const input = document.getElementById("inputNumber")
 const warningDiv = document.getElementById("warning")
@@ -46,26 +46,35 @@ input.addEventListener("change", function () {
       factorialTable.innerHTML = ""
 
       // Generate multiplication table
-      for (let i = 1; i <= inputNumber; i++) {
-         let insertMP = document.createElement("p")
-         insertMP.innerHTML = `<span class='number'>${i}</span> x <span class='number'>${inputNumber}</span> = <span class='number'>${
-            i * inputNumber
-         }</span>`
-         insertMP.classList.add("mb-0")
-
-         multipliactionTable.appendChild(insertMP)
-      }
-
+      getMultiplicationTable(inputNumber, multipliactionTable)
       // Generato factorial table
-      for (let i = 1; i <= inputNumber; i++) {
-         let factorial = 1
-         for (let j = 1; j <= i; j++) {
-            factorial *= j
-         }
-         let insertFP = document.createElement("p")
-         insertFP.innerHTML = `Factorial de <span class='number'>${i}</span> es : <span class='number'>${factorial}</span>`
-         insertFP.classList.add("mb-0")
-         factorialTable.appendChild(insertFP)
-      }
+      getFactorial(inputNumber, factorialTable)
    }
 })
+
+/*=============================================
+=                  FUNCTIONS                  =
+=============================================*/
+function getMultiplicationTable(num, tableToInsert) {
+   for (let i = 1; i <= num; i++) {
+      let insertMP = document.createElement("p")
+      insertMP.innerHTML = `<span class='number'>${i}</span> x <span class='number'>${num}</span> = <span class='number'>${
+         i * num
+      }</span>`
+      insertMP.classList.add("mb-0")
+      tableToInsert.appendChild(insertMP)
+   }
+}
+
+function getFactorial(num, tableToInsert) {
+   for (let i = 1; i <= num; i++) {
+      let factorial = 1
+      for (let j = 1; j <= i; j++) {
+         factorial *= j
+      }
+      let insertFP = document.createElement("p")
+      insertFP.innerHTML = `Factorial de <span class='number'>${i}</span> es : <span class='number'>${factorial}</span>`
+      insertFP.classList.add("mb-0")
+      tableToInsert.appendChild(insertFP)
+   }
+}

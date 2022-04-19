@@ -36,6 +36,10 @@ h1 {
 .accordion-button:not(.collapsed) {
    background-color: var(--color-card-bg);
 }
+.card-text img {
+   width: 100%;
+   box-shadow: 0rem 0rem 0.5rem var(--color-acc-shadow);
+}
 .accordion-item {
    border-color: var(--color-acc-border);
 }
@@ -65,14 +69,12 @@ h1 {
    background-color: var(--color-primary);
 }
 
-/*----------       TESTS       ----------*/
-.card-text img {
-   width: 100%;
-   box-shadow: 0rem 0rem 0.5rem var(--color-acc-shadow);
-}
-
 #inputNumber {
    max-width: 80px;
+}
+#warning {
+   display: none;
+   color: #5b2e9e;
 }
 
 .outputTable {
@@ -80,30 +82,13 @@ h1 {
    color: var(--color-bg);
    min-height: 4.5rem;
 }
-
-.outputTable h3 {
+h3 {
    min-height: 2.5rem;
    border-bottom: 2px solid var(--color-bg);
-}
-
-#warning {
-   display: none;
-   color: #5b2e9e;
 }
 .number {
    color: #880000;
    display: inline-block;
    min-width: 1.165rem;
    text-align: center;
-}
-
-.visible {
-   visibility: visible;
-   opacity: 1;
-   transition: visibility 0s linear 800ms, opacity 800ms;
-}
-.hidden {
-   visibility: hidden;
-   opacity: 0;
-   transition: visibility 0s linear 0s, opacity 800ms;
 }
